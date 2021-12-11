@@ -1,0 +1,13 @@
+Comandos
+
+START
+bin/zookeeper-server-start.sh config/zookeeper.properties
+bin/kafka-server-start.sh config/server.properties
+
+CREATE
+bin/kafka-topics.sh --create --replication-factor 1 --partitions 1 --topic trump --bootstrap-server localhost:9092
+
+bin/kafka-topics.sh --create --partitions 1 --replication-factor 1 --topic quickstart-events --bootstrap-server localhost:9092
+
+LIST
+bin/kafka-topics.sh --bootstrap-server=localhost:9092 --list
