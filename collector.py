@@ -1,23 +1,20 @@
-from tweepy import OAuthHandler
-from tweepy import Stream
+import tweepy
 from kafka import KafkaProducer
 
-access_token = ""
-access_token_secret =  ""
-consumer_key =  ""
-consumer_secret =  ""
+bearer_token = ""
 
-class StdOutListener(Stream):
-    def on_data(self, data):
-        producer.send_messages("trump", data.encode('utf-8'))
-        print (data)
-        return True
-    def on_error(self, status):
-        print (status)
+client = tweepy.Client(bearer_token=bearer_token)
+
+query = 'navidad -is:retweet'
+
+tweets = client.search_recent_tweets(query=query, tweet_fields=['context_annotations', 'created_at'], user_fields=['profile_image_url'], expansions='author_id', max_results=100)
 
 producer = KafkaProducer(bootstrap_servers='localhost:9092')
-l = StdOutListener(consumer_key, consumer_secret, access_token, access_token_secret)
-auth = OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
-stream = Stream(auth, l)
-stream.filter(track="trump")
+counter = 0
+print("Tamanho: " + str(len(tweets.data)))
+
+for tweet in tweets.data:
+    counter = counter + 1
+    text = "\n 3." + str(counter) + " ------------\n" + str(tweet)
+    print(text)
+    producer.send("navidad2", text.encode())
