@@ -7,15 +7,13 @@ O Apache Kafka agrega logs de uma forma baseada em mensagens, com fluxos de mens
 
 Neste modelo, o tópico escolhido será "Natal" (Navidad, em espanhol). Haverá um produtor (collector.py), o qual coletará dados do Twitter e as inserirá no broker do Kafka. Serão capturadas 100 publicações contendo a palavra "navidad" e serão submetidas ao tópico "navidad" (o qual contém uma partição). O consumidor (consumer.py), então, irá consumir do tópico e as imprimir, simulando um processamento das informações obtidas da plataforma.
 
-![Ilustração da arquitetura utilizada.](/assets/images/arq_tweet.png "Arquitetura utilizada")
-
 A arquitetura geral do Apache permitiria também o uso de múltiplos brokers (servidores), bem como múltiplos tópicos.
 
-![Ilustração da arquitetura genérica do Kafka.](/assets/images/arq.PNG "Arquitetura genérica do Kafka [1]")
+![Exemplo de uma arquitetura do Kafka.](/assets/images/arq.PNG "Exemplo de uma arquitetura do Kafka [1]")
 
 ### **IMPORTANTE:** Antes de começar a execução do projeto é necessário que você tenha uma versão Apache Kafka na sua máquina!
 
-Baixe e descompacte o [Kafka]<https://dlcdn.apache.org/kafka/3.0.0/kafka_2.13-3.0.0.tgz> em sua máquina.
+Baixe e descompacte o Kafka em sua máquina através do link: <https://dlcdn.apache.org/kafka/3.0.0/kafka_2.13-3.0.0.tgz>.
 
 ### Pacotes necessários antes da execução
 Além do Kafka pré instalado, será necessário instalar os pacotes *pip*, *kafka-python*, *python-twitter*, *tweepy* e *default-jre*.
