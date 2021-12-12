@@ -14,7 +14,7 @@ A arquitetura geral do Apache permitiria também o uso de múltiplos brokers (se
 ### **IMPORTANTE:** Antes de começar a execução do projeto é necessária a instalação do Apache Kafka na máquina!
 
 ### Pacotes necessários antes da execução
-Além do Kafka pré instalado, será necessário instalar os pacotes pip, kafka-python, python-twitter, tweepy e default-jre.
+Além do Kafka pré instalado, será necessário instalar os pacotes *pip*, *kafka-python*, *python-twitter*, *tweepy* e *default-jre*.
 
 > #### Instalação de pacotes:
 > - sudo apt install python3-pip
