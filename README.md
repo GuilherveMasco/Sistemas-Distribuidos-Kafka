@@ -2,6 +2,9 @@
 
 ### Antes de começar a execução do projeto é necessária a instalação do Apache Kafka na máquina!
 
+### Pacotes necessários antes da execução
+Além do Kafka pré instalado, será necessário instalar os pacotes pip, kafka-python, python-twitter, tweepy e default-jre.
+
 > #### Instalação de pacotes:
 > - sudo apt install python3-pip
 > - pip install kafka-python
@@ -9,6 +12,8 @@
 > - pip install tweepy
 > - sudo apt install default-jre
 
+### Inicialização dos servers
+Após tudo instalado, é necessário inicializar os servers Zookeeper e Kafka.
 > #### Inicialização dos servers Zookeeper e Kafka (disponíveis na pasta de instalação do Kafka):
 > - bin/zookeeper-server-start.sh config/zookeeper.properties
 > - bin/kafka-server-start.sh config/server.properties
