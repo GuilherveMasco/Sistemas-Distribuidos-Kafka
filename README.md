@@ -9,7 +9,7 @@ O Apache Kafka agrega logs de uma forma baseada em mensagens, com fluxos de mens
 
 A arquitetura geral do Apache permitiria também o uso de múltiplos brokers (servidores), bem como múltiplos tópicos.
 
-![Ilustração da arquitetura genérica do Kafka.](/assets/images/arq.png "Arquitetura genérica do Kafka [1]")
+![Ilustração da arquitetura genérica do Kafka.](/assets/images/arq.PNG "Arquitetura genérica do Kafka [1]")
 
 ### **IMPORTANTE:** Antes de começar a execução do projeto é necessária a instalação do Apache Kafka na máquina!
 
