@@ -1,6 +1,7 @@
 # Sistemas-Distribuidos-Kafka
 
-## Antes de começar a execução do projeto é necessária a instalação do Apache Kafka na máquina!
+### Antes de começar a execução do projeto é necessária a instalação do Apache Kafka na máquina!
+
 PACKAGES
 sudo apt install python3-pip
 pip install kafka-python
