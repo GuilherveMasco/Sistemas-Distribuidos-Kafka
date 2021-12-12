@@ -4,6 +4,7 @@
 
 ### A arquitetura
 O Apache Kafka agrega logs de uma forma baseada em mensagens, com fluxos de mensagens sendo definidos por tópicos, onde os produtores podem publicar mensagens. Neste modelo, o tópico escolhido será "Natal", os produtores serão os usuários do Twitter, as publicações serão capturadas e enviadas ao broker e divididas em tópicos (esses particionados). Os consumidores (collector.py), então, irão consumir do tópico com mensagens referentes ao Natal.
+
 ![Ilustração da arquitetura utilizada.](/assets/images/arq_tweet.png "Arquitetura utilizada")
 
 ### **IMPORTANTE:** Antes de começar a execução do projeto é necessária a instalação do Apache Kafka na máquina!
