@@ -3,7 +3,9 @@
 ## Sistema para coleta e tratamento de tweets utilizando o Apacha Kafka e Zookeeper
 
 ### A arquitetura
-O Apache Kafka agrega logs de uma forma baseada em mensagens, com fluxos de mensagens sendo definidos por tópicos, onde os produtores podem publicar mensagens. Neste modelo, o tópico escolhido será "Natal", os produtores serão os usuários do Twitter, as publicações serão capturadas e enviadas ao broker e divididas em tópicos (esses particionados). Os consumidores (collector.py), então, irão consumir do tópico com mensagens referentes ao Natal.
+O Apache Kafka agrega logs de uma forma baseada em mensagens, com fluxos de mensagens sendo definidos por tópicos, onde os produtores podem publicar mensagens.
+
+Neste modelo, o tópico escolhido será "Natal" (Navidad, em espanhol). Haverá um produtor (collector.py), o qual coletará dados do Twitter e as inserirá no broker do Kafka. Serão capturadas 100 publicações contendo a palavra "navidad" e serão submetidas ao tópico "navidad" (o qual contém uma partição). O consumidor (consumer.py), então, irá consumir do tópico e as imprimir, simulando um processamento das informações obtidas da plataforma.
 
 ![Ilustração da arquitetura utilizada.](/assets/images/arq_tweet.png "Arquitetura utilizada")
 
@@ -11,7 +13,9 @@ A arquitetura geral do Apache permitiria também o uso de múltiplos brokers (se
 
 ![Ilustração da arquitetura genérica do Kafka.](/assets/images/arq.PNG "Arquitetura genérica do Kafka [1]")
 
-### **IMPORTANTE:** Antes de começar a execução do projeto é necessária a instalação do Apache Kafka na máquina!
+### **IMPORTANTE:** Antes de começar a execução do projeto é necessário que você tenha uma versão Apache Kafka na sua máquina!
+
+Baixe e descompacte o [Kafka]<https://dlcdn.apache.org/kafka/3.0.0/kafka_2.13-3.0.0.tgz> em sua máquina.
 
 ### Pacotes necessários antes da execução
 Além do Kafka pré instalado, será necessário instalar os pacotes *pip*, *kafka-python*, *python-twitter*, *tweepy* e *default-jre*.
@@ -23,31 +27,36 @@ Além do Kafka pré instalado, será necessário instalar os pacotes *pip*, *kaf
 > - pip install tweepy
 > - sudo apt install default-jre
 
-### Inicialização dos servers
+### Iniciando o Kafka (linha de comando)
+#### Inicialização dos servers
 Após tudo instalado, é necessário inicializar os servers Zookeeper e Kafka.
 > #### Inicialização dos servers Zookeeper e Kafka (disponíveis na pasta de instalação do Kafka):
 > - bin/zookeeper-server-start.sh config/zookeeper.properties
 > - bin/kafka-server-start.sh config/server.properties
 
-### Criação
-> - bin/kafka-topics.sh --create --replication-factor 1 --partitions 1 --topic trump --bootstrap-server localhost:9092
-> - bin/kafka-topics.sh --create --partitions 1 --replication-factor 1 --topic quickstart-events --bootstrap-server localhost:9092
+#### Criação do tópico
+> - bin/kafka-topics.sh --create --replication-factor 1 --partitions 1 --topic navidad --bootstrap-server localhost:9092
 
-### Listagem
+#### Listagem dos tópicos criados
 > - bin/kafka-topics.sh --bootstrap-server=localhost:9092 --list
 
-### Escrita no Kafka
-> - bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
+#### Submetendo dados no tópico
+> - bin/kafka-console-producer.sh --topic navidad --bootstrap-server localhost:9092
 
-### Leitura no Kafka
+#### Lendo dados do tópico
 > - bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
 > - bin/kafka-console-consumer.sh --topic trump --from-beginning --bootstrap-server localhost:9092
 
-### Coleta de tweets
+### Executando scripts
+#### Produtor: Coleta de tweets
 > - python3 collector.py
+
+#### Consumidor: Processando dados através do Kafka
+> - python3 consumer.py
 
 ### Referências e links importantes
 > - [1]<http://notes.stephenholiday.com/Kafka.pdf>
 > - [2]<https://kafka.apache.org/30/documentation.html#quickstart>
 > - [3]<https://www.bmc.com/blogs/working-streaming-twitter-data-using-kafka/>
 > - [4]<https://dev.to/twitterdev/a-comprehensive-guide-for-using-the-twitter-api-v2-using-tweepy-in-python-15d9>
+> - [5]<https://towardsdatascience.com/kafka-python-explained-in-10-lines-of-code-800e3e07dad1>
