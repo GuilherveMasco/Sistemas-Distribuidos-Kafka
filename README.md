@@ -47,6 +47,7 @@ Após tudo instalado, é necessário inicializar os servers Zookeeper e Kafka.
 > - python3 collector.py
 
 ### Referências e links importantes
-> - <https://kafka.apache.org/30/documentation.html#quickstart>
-> - <https://www.bmc.com/blogs/working-streaming-twitter-data-using-kafka/>
-> - <https://dev.to/twitterdev/a-comprehensive-guide-for-using-the-twitter-api-v2-using-tweepy-in-python-15d9>
+> - [1]<http://notes.stephenholiday.com/Kafka.pdf>
+> - [2]<https://kafka.apache.org/30/documentation.html#quickstart>
+> - [3]<https://www.bmc.com/blogs/working-streaming-twitter-data-using-kafka/>
+> - [4]<https://dev.to/twitterdev/a-comprehensive-guide-for-using-the-twitter-api-v2-using-tweepy-in-python-15d9>
