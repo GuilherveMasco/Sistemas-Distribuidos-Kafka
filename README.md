@@ -1,5 +1,5 @@
 # Sistemas-Distribuidos-Kafka
----
+
 ## Sistema para coleta e tratamento de tweets utilizando o Apacha Kafka e Zookeeper
 
 ### **IMPORTANTE:** Antes de começar a execução do projeto é necessária a instalação do Apache Kafka na máquina!
