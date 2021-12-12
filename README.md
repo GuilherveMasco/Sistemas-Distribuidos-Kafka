@@ -9,12 +9,12 @@ O Apache Kafka agrega logs de uma forma baseada em mensagens, com fluxos de mens
 
 A arquitetura geral do Apache permitiria também o uso de múltiplos brokers (servidores), bem como múltiplos tópicos.
 
-![Ilustração da arquitetura genérica do Kafka.](/assets/images/arq.png "Arquitetura genérica do Kafka [1]")
+![Ilustração da arquitetura genérica do Kafka.](/assets/images/arq.PNG "Arquitetura genérica do Kafka [1]")
 
 ### **IMPORTANTE:** Antes de começar a execução do projeto é necessária a instalação do Apache Kafka na máquina!
 
 ### Pacotes necessários antes da execução
-Além do Kafka pré instalado, será necessário instalar os pacotes pip, kafka-python, python-twitter, tweepy e default-jre.
+Além do Kafka pré instalado, será necessário instalar os pacotes *pip*, *kafka-python*, *python-twitter*, *tweepy* e *default-jre*.
 
 > #### Instalação de pacotes:
 > - sudo apt install python3-pip
@@ -47,6 +47,7 @@ Após tudo instalado, é necessário inicializar os servers Zookeeper e Kafka.
 > - python3 collector.py
 
 ### Referências e links importantes
-> - <https://kafka.apache.org/30/documentation.html#quickstart>
-> - <https://www.bmc.com/blogs/working-streaming-twitter-data-using-kafka/>
-> - <https://dev.to/twitterdev/a-comprehensive-guide-for-using-the-twitter-api-v2-using-tweepy-in-python-15d9>
+> - [1]<http://notes.stephenholiday.com/Kafka.pdf>
+> - [2]<https://kafka.apache.org/30/documentation.html#quickstart>
+> - [3]<https://www.bmc.com/blogs/working-streaming-twitter-data-using-kafka/>
+> - [4]<https://dev.to/twitterdev/a-comprehensive-guide-for-using-the-twitter-api-v2-using-tweepy-in-python-15d9>
