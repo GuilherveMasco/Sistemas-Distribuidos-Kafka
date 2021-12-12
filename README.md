@@ -1,4 +1,6 @@
 # Sistemas-Distribuidos-Kafka
+---
+## Sistema para coleta e tratamento de tweets utilizando o Apacha Kafka e Zookeeper
 
 ### **IMPORTANTE:** Antes de começar a execução do projeto é necessária a instalação do Apache Kafka na máquina!
 
@@ -19,8 +21,8 @@ Após tudo instalado, é necessário inicializar os servers Zookeeper e Kafka.
 > - bin/kafka-server-start.sh config/server.properties
 
 ### Criação
-> -bin/kafka-topics.sh --create --replication-factor 1 --partitions 1 --topic trump --bootstrap-server localhost:9092
-> -bin/kafka-topics.sh --create --partitions 1 --replication-factor 1 --topic quickstart-events --bootstrap-server localhost:9092
+> - bin/kafka-topics.sh --create --replication-factor 1 --partitions 1 --topic trump --bootstrap-server localhost:9092
+> - bin/kafka-topics.sh --create --partitions 1 --replication-factor 1 --topic quickstart-events --bootstrap-server localhost:9092
 
 ### Listagem
 > - bin/kafka-topics.sh --bootstrap-server=localhost:9092 --list
