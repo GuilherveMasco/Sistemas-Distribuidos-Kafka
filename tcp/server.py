@@ -98,7 +98,7 @@ def server():
 		    for message in consumer:
 		    	if (counter == 10):
 		    		break
-		    	print(message.value.decode("utf-8") + "\n=================\n")
+		    	# print(message.value.decode("utf-8") + "\n=================\n")
 		    	client_sock.sendall(message.value)
 		    	counter = counter + 1
 		    	
