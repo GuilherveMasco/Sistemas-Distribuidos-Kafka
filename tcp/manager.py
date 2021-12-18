@@ -33,7 +33,8 @@ def manager():
       if not data:
           break
       chunks.append(data)
-  print(repr(b''.join(chunks)))
+      
+  print((b''.join(chunks)).decode("UTF-8"))
 
   # Disconnect from server.
   client_sock.close()

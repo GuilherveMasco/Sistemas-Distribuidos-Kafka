@@ -30,5 +30,10 @@ bin/kafka-console-consumer.sh --topic trump --from-beginning --bootstrap-server 
 TAKE TWEETS
 python3 collector.py
 
+USE API TO CREATE AND DELETE
+python3 server.py
+python3 manager.py create_topic lagarticha 1
+python3 manager.py delete_topic lagarticha
+
 IMPORTANT LINKS
 https://dev.to/twitterdev/a-comprehensive-guide-for-using-the-twitter-api-v2-using-tweepy-in-python-15d9
