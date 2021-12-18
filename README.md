@@ -7,10 +7,10 @@ O Apache Kafka agrega logs de uma forma baseada em mensagens, com fluxos de mens
 
 No exemplo de execução, o tópico escolhido será "Natal" (Navidad, em espanhol). Haverá um produtor (collector.py), o qual coletará dados do Twitter e as inserirá no broker do Kafka. Serão capturadas 100 publicações contendo a palavra "navidad" e serão submetidas ao tópico "navidad" (o qual contém uma partição). O consumidor (consumer.py), então, irá consumir do tópico e as imprimir, simulando um processamento das informações obtidas da plataforma.
 
-Também é proposta uma aplicação que gerencia a criação e exclusão de tópicos, bem como a leitura de mensagens. Essa aplicação foi desenvolvida utilizando a arquitetura cliente-servidor e disponibiliza uma API que pode ser acessada através de um socket TCP. Abaixo segue a imagem que ilustra essa arquitetura e o link para a documentação da API.
+Também é proposta uma aplicação que gerencia a criação e exclusão de tópicos, bem como a leitura de mensagens. Essa aplicação foi desenvolvida utilizando a arquitetura cliente-servidor e disponibiliza uma API que pode ser acessada através de um socket TCP. Abaixo segue a imagem que ilustra essa arquitetura. A documentação da API pode ser acessada pelo link [Documentação da API](doc/api_documentation.pdf).
 
 ![Arquitetura da aplicação proposta](/doc/architeture.png "Arquitetura da aplicação proposta")
-[Documentação da API](doc/api_documentation.pdf)
+
 
 ### **IMPORTANTE:** Antes de começar a execução do projeto é necessário que você tenha uma versão Apache Kafka na sua máquina!
 
