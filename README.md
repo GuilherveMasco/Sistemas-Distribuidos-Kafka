@@ -10,7 +10,7 @@ No exemplo de execução, o tópico escolhido será "Natal" (Navidad, em espanho
 Também é proposta uma aplicação que gerencia a criação e exclusão de tópicos, bem como a leitura de mensagens. Essa aplicação foi desenvolvida utilizando a arquitetura cliente-servidor e disponibiliza uma API que pode ser acessada através de um socket TCP. Abaixo segue a imagem que ilustra essa arquitetura e o link para a documentação da API.
 
 ![Arquitetura da aplicação proposta](/doc/architeture.png "Arquitetura da aplicação proposta")
-![Documentação da API](doc/api_documentation.pdf)
+[Documentação da API](doc/api_documentation.pdf)
 
 ### **IMPORTANTE:** Antes de começar a execução do projeto é necessário que você tenha uma versão Apache Kafka na sua máquina!
 
@@ -53,7 +53,7 @@ Após tudo instalado, é necessário inicializar os servers Zookeeper e Kafka.
 #### Consumidor: Processando dados através do Kafka
 > - python3 consumer.py
 
-### Executando da aplicação proposta
+### Executando a aplicação proposta
 Para executar o servidor da aplicação proposta você deve utilizar o comando abaixo:
 > - python3 ./api/server.py
 
