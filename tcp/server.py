@@ -1,11 +1,17 @@
 import socket
 import tweepy
 from kafka import KafkaProducer
+from kafka import KafkaConsumer
 from kafka import KafkaAdminClient
 import kafka
 
 tweeter_bearer_token = "AAAAAAAAAAAAAAAAAAAAAOxzWwEAAAAAuAPkErXtqs9SmUGlYwXgvEpJFq8%3DM2VUJiUD8AVP1qibga3ueWh3B70wChGbU3jIUBGekdWd7PyVme"
 
+def read_topic(topic_name, client_sock):
+	consumer = KafkaConsumer(("topic_" + topic_name), bootstrap_servers=["localhost:9092"], auto_offset_reset="earliest", enable_auto_commit=True)
+	
+	return consumer
+		
 def tweeter_reader(keyword, topic_name):
 	client = tweepy.Client(bearer_token=tweeter_bearer_token)
 	query = keyword + " -is:retweet"
@@ -86,7 +92,16 @@ def server():
 		    client_sock.close()
 		  elif (role == "client"):
 		    print("--> [CLIENT] " + request)
-		    client_sock.sendall(b''.join(chunks))
+		    consumer = read_topic(topic_name, client_sock)
+		    
+		    counter = 1
+		    for message in consumer:
+		    	if (counter == 10):
+		    		break
+		    	print(message.value.decode("utf-8") + "\n=================\n")
+		    	client_sock.sendall(message.value)
+		    	counter = counter + 1
+		    	
 		    client_sock.close()
 		  else:
 		    print("Error: invalid role")

@@ -27,10 +27,11 @@ def client():
   # Receive some data back.
   chunks = []
   while True:
-      data = client_sock.recv(2048)
-      if not data:
-          break
-      chunks.append(data)
+  		data = client_sock.recv(2048)
+  		if not data:
+  			break
+  		chunks.append(data)
+  		print(data.decode("UTF-8"))
   print(repr(b''.join(chunks)))
 
   # Disconnect from server.
